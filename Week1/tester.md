@@ -45,3 +45,4 @@ Backup my work !
 
 ## Plan of Bioinformatics studying
 
+Take note and attend the lecture carefully, finish homework on time, acquire useful skills, and do some actual work on bioinformatics.
