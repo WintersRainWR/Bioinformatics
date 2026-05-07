@@ -64,9 +64,9 @@ docker-desktop:/tmp/docker-desktop-root/mnt/host/c/WINDOWS/system32# makeTagDire
 
 docker-desktop:/tmp/docker-desktop-root/mnt/host/c/WINDOWS/system32# makeTagDirectory /home/test/chip-seq/homework/input /home/test/chip-seq/homework/input.chrom_part.bam
 
-docker-desktop:/tmp/docker-desktop-root/mnt/host/c/WINDOWS/system32# findPeaks /home/test/chip-seq/homework/ip -style factor -o /home/test/chip-seq/output_myself/part.peak -i /home/test/chip-seq/homework/input
+docker-desktop:/tmp/docker-desktop-root/mnt/host/c/WINDOWS/system32# findPeaks /home/test/chip-seq/homework/ip -style factor -o /home/test/chip-seq/ans/answer.peak -i /home/test/chip-seq/homework/input
 
-docker-desktop:/tmp/docker-desktop-root/mnt/host/c/WINDOWS/system32# grep -v '^#' /home/test/chip-seq/output_myself/part.peak | awk 'NR>1 && $11>=8 && $12<1e-8 {print $0}'
+docker-desktop:/tmp/docker-desktop-root/mnt/host/c/WINDOWS/system32# grep -v '^#' /home/test/chip-seq/ans/answer.peak | awk 'NR>1 && $11>=8 && $12<1e-8 {print $0}'
 chrIV-1 chrIV   465220  465468  +       111129.9        0.920   15510.000000    15585.0 234.1   66.57   0.00e+00        55.11   0.00e+00    0.50
 chrIV-2 chrIV   1490100 1490348 +       81687.8 0.857   11468.000000    11456.0 195.1   58.72   0.00e+00        35.06   0.00e+00        0.50
 chrV-1  chrV    141138  141386  +       54449.0 0.855   7647.000000     7636.0  182.3   41.88   0.00e+00        21.55   0.00e+00        0.52
@@ -92,5 +92,5 @@ chrIV-14        chrIV   1525285 1525496 +       11779.7 0.923   1953.000000     
 chrIV-17        chrIV   722439  722687  +       10774.3 0.676   1512.000000     1511.0  172.4   8.76    0.00e+00        5.26    0.00e+00    0.53
 chrIV-46        chrIV   568825  569073  +       5005.7  0.820   705.000000      702.0   85.8    8.18    0.00e+00        4.54    3.86e-226   0.84
 
-docker-desktop:/tmp/docker-desktop-root/mnt/host/c/WINDOWS/system32# findMotifsGenome.pl /home/test/chip-seq/output_myself/part.peak sacCer2 /home/test/chip-seq/output_myself/part.motif.output -len 8
+docker-desktop:/tmp/docker-desktop-root/mnt/host/c/WINDOWS/system32# findMotifsGenome.pl /home/test/chip-seq/ans/answer.peak sacCer2 /home/test/chip-seq/ans/answer.motif.output -len 8
 ```
