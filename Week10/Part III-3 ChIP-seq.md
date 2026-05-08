@@ -60,13 +60,13 @@ findPeaks 用于从 ChIP-seq 数据中识别显著富集区域（peaks），而 
 ## 3. 我们在容器的/home/test/chip-seq/homework目录中提供了酵母Snf1蛋白CHIP-seq的bam文件，ip.chrom_part.bam为IP实验数据，input.chrom\_part.bam为背景数据。请大家从这两个文件出发，用homer重复本章中介绍的peak calling和motif finding分析。请大家提交找到的motif的截图，以及Fold Change (vs Control) >=8且p-value (vs Control) < 10(−8)的peaks。请将作业整理成pdf版文件并提交。
 
 ```
-docker-desktop:/tmp/docker-desktop-root/mnt/host/c/WINDOWS/system32# makeTagDirectory /home/test/chip-seq/homework/ip /home/test/chip-seq/homework/ip.chrom_part.bam
+docker-desktop:/tmp/docker-desktop-root/mnt/host/c/WINDOWS/system32# makeTagDirectory homework/ip homework/ip.chrom_part.bam
 
-docker-desktop:/tmp/docker-desktop-root/mnt/host/c/WINDOWS/system32# makeTagDirectory /home/test/chip-seq/homework/input /home/test/chip-seq/homework/input.chrom_part.bam
+docker-desktop:/tmp/docker-desktop-root/mnt/host/c/WINDOWS/system32# makeTagDirectory homework/input homework/input.chrom_part.bam
 
-docker-desktop:/tmp/docker-desktop-root/mnt/host/c/WINDOWS/system32# findPeaks /home/test/chip-seq/homework/ip -style factor -o /home/test/chip-seq/ans/answer.peak -i /home/test/chip-seq/homework/input
+docker-desktop:/tmp/docker-desktop-root/mnt/host/c/WINDOWS/system32# findPeaks homework/ip -style factor -o ans/answer.peak -i homework/input
 
-docker-desktop:/tmp/docker-desktop-root/mnt/host/c/WINDOWS/system32# grep -v '^#' /home/test/chip-seq/ans/answer.peak | awk 'NR>1 && $11>=8 && $12<1e-8 {print $0}'
+docker-desktop:/tmp/docker-desktop-root/mnt/host/c/WINDOWS/system32# grep -v '^#' ans/answer.peak | awk 'NR>1 && $11>=8 && $12<1e-8 {print $0}'
 chrIV-1 chrIV   465220  465468  +       111129.9        0.920   15510.000000    15585.0 234.1   66.57   0.00e+00        55.11   0.00e+00    0.50
 chrIV-2 chrIV   1490100 1490348 +       81687.8 0.857   11468.000000    11456.0 195.1   58.72   0.00e+00        35.06   0.00e+00        0.50
 chrV-1  chrV    141138  141386  +       54449.0 0.855   7647.000000     7636.0  182.3   41.88   0.00e+00        21.55   0.00e+00        0.52
@@ -92,7 +92,7 @@ chrIV-14        chrIV   1525285 1525496 +       11779.7 0.923   1953.000000     
 chrIV-17        chrIV   722439  722687  +       10774.3 0.676   1512.000000     1511.0  172.4   8.76    0.00e+00        5.26    0.00e+00    0.53
 chrIV-46        chrIV   568825  569073  +       5005.7  0.820   705.000000      702.0   85.8    8.18    0.00e+00        4.54    3.86e-226   0.84
 
-docker-desktop:/tmp/docker-desktop-root/mnt/host/c/WINDOWS/system32# findMotifsGenome.pl /home/test/chip-seq/ans/answer.peak sacCer2 /home/test/chip-seq/ans/answer.motif.output -len 8
+docker-desktop:/tmp/docker-desktop-root/mnt/host/c/WINDOWS/system32# findMotifsGenome.pl ans/answer.peak sacCer2 ans/answer.motif.output -len 8
 ```
 
 <img width="2505" height="1319" alt="image" src="https://github.com/user-attachments/assets/2de52b42-8ba1-4e3a-bf07-321cd5711db5" />
