@@ -94,3 +94,5 @@ chrIV-46        chrIV   568825  569073  +       5005.7  0.820   705.000000      
 
 docker-desktop:/tmp/docker-desktop-root/mnt/host/c/WINDOWS/system32# findMotifsGenome.pl /home/test/chip-seq/ans/answer.peak sacCer2 /home/test/chip-seq/ans/answer.motif.output -len 8
 ```
+
+<img width="2505" height="1319" alt="image" src="https://github.com/user-attachments/assets/2de52b42-8ba1-4e3a-bf07-321cd5711db5" />
