@@ -57,7 +57,7 @@
 
 findPeaks 用于从 ChIP-seq 数据中识别显著富集区域（peaks），而 findMotifsGenome.pl 用于在这些区域中挖掘潜在的转录因子结合序列特征（motif）。
 
-### （3）
+## 3. 我们在容器的/home/test/chip-seq/homework目录中提供了酵母Snf1蛋白CHIP-seq的bam文件，ip.chrom_part.bam为IP实验数据，input.chrom\_part.bam为背景数据。请大家从这两个文件出发，用homer重复本章中介绍的peak calling和motif finding分析。请大家提交找到的motif的截图，以及Fold Change (vs Control) >=8且p-value (vs Control) < 10(−8)的peaks。请将作业整理成pdf版文件并提交。
 
 ```
 docker-desktop:/tmp/docker-desktop-root/mnt/host/c/WINDOWS/system32# makeTagDirectory /home/test/chip-seq/homework/ip /home/test/chip-seq/homework/ip.chrom_part.bam
